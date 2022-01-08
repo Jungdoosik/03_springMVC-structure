@@ -6,6 +6,8 @@ import javax.servlet.http.HttpSession;
 
 import kr.or.iei.Controller;
 
+
+@org.springframework.stereotype.Controller(value="logoutController")
 public class MemberLogoutController implements Controller {
 
 	@Override

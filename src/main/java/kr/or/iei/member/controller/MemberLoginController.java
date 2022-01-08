@@ -1,5 +1,6 @@
 package kr.or.iei.member.controller;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -8,9 +9,12 @@ import kr.or.iei.Controller;
 import kr.or.iei.member.model.service.MemberService;
 import kr.or.iei.member.model.vo.Member;
 
+
+@org.springframework.stereotype.Controller(value="loginController")
 public class MemberLoginController implements Controller {
 	
-	private MemberService mService = new MemberService();
+	@Resource(name="mService")
+	private MemberService mService;
 
 	@Override
 	public String handlesRequest(HttpServletRequest request, HttpServletResponse response) {
